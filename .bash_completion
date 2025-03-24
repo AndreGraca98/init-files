@@ -1,2 +1,28 @@
 
-source /dev/stdin <<<"$(gopass completion bash)"
+[ -r ~/.local/share/gopass ] && source /dev/stdin <<<"$(gopass completion bash)"
+
+# START: Bash auto completion for make
+_make_fzf_completion() {
+    local cur prev start_word
+    start_word=${COMP_WORDS[0]}
+    cur=${COMP_WORDS[COMP_CWORD]}
+    prev=${COMP_WORDS[COMP_CWORD - 1]}
+
+    local _fzf
+    if [ $cur ]; then
+        # if start of a word
+        alias _fzf="fzf --ansi --print-query -0 -1 --query ${cur}"
+    else
+        alias _fzf="fzf --ansi --print-query -0 -1"
+    fi
+
+    local selected_target
+    # find makefile contents like ->   docker-build-all: ## build all
+    selected_target=$(awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "%-30s %s\n", $1, $2}' ?akefile | _fzf)
+
+    # get the target name. e.g. "\n${target}   ${Description}"
+    COMPREPLY=$(echo "$selected_target" | tail -n 1 | awk '{print $1}')
+}
+complete -F _make_fzf_completion make
+# END: Bash auto completion for make
+
