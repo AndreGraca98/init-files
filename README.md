@@ -1,5 +1,26 @@
 # Setup new MacOS
 
+- [Setup new MacOS](#setup-new-macos)
+  - [Install](#install)
+    - [brew](#brew)
+    - [iterm2](#iterm2)
+    - [FireFox](#firefox)
+    - [Slack](#slack)
+    - [VSCode](#vscode)
+    - [VPN](#vpn)
+    - [GoPass](#gopass)
+    - [GitHub](#github)
+    - [GitLab](#gitlab)
+    - [Fork](#fork)
+    - [Teams](#teams)
+    - [Outlook](#outlook)
+    - [Spotify](#spotify)
+    - [Docker](#docker)
+    - [FZF](#fzf)
+    - [Python](#python)
+      - [pip](#pip)
+      - [pyenv](#pyenv)
+
 ## Install
 
 ### [brew](https://brew.sh/)
@@ -73,7 +94,7 @@
 - Double-click the .dmg and follow the instructions
 - Create a new connection with server url: `vpn.uk.clara.net`
 
-### GoPass
+### [GoPass](https://github.com/gopasspw/gopass)
 
 - install gopass
 
@@ -108,7 +129,7 @@
     gopass clone git@git.eu.clara.net:billing-system/secrets.git cbs-secrets --sync gitcli    
     ```
 
-### GitHub
+### [GitHub](https://github.com)
 
 - create new ssh key:
 
@@ -190,7 +211,11 @@
 
 - double-click to install
 
-#### Spotify
+### [Outlook](https://www.microsoft.com/en-us/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook)
+
+- install <https://apps.apple.com/us/app/microsoft-outlook/id985367838>
+
+### [Spotify](/https://open.spotify.com/)
 
 - download `.dmg`:
 
