@@ -220,4 +220,34 @@
     brew install fzf
     ```
 
+### [Python](https://www.python.org/)
 
+#### [pip](https://github.com/pypa/pip)
+
+- install
+
+    ```bash
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    ```
+
+- setup
+
+    ```bashr
+    python3 get-pip.py
+    ```
+
+#### [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#b-set-up-your-shell-environment-for-pyenv)
+
+- install
+
+    ```bash
+    brew install pyenv
+    ```
+
+- setup
+
+    ```bash
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
+    ```

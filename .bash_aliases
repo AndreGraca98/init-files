@@ -1,3 +1,6 @@
+# alias pip=pip3
+# alias python=python3
+
 alias ls='ls -h --color=auto -F'
 alias ll='ls -l'
 alias la='ls -lA'
