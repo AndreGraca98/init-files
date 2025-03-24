@@ -29,9 +29,7 @@
 - load key-map for natural typing:
 
   - ```text
-        echo '{"Key Mappings":{"0xf728-0x0":{"Action":11,"Text":"0x4"},"0xf702-0x280000":{"Action":10,"Text":"b"},"0xf702-0x300000":{"Action":11,"Text":"0x1"},"0xf703-0x280000":{"Action":10,"Text":"f"},"0xf728-0x80000":{"Action":10,"Text":"d"},"0x7f-0x100000":{"Action":11,"Text":"0x15"},"0xf703-0x300000":{"Action":11,"Text":"0x5"},"0x7f-0x80000":{"Action":11,"Text":"\"0x1b 0x7f\""}},"Touch Bar Items":[]}' > iterm2.itermkeymap
-        ```
-
+    echo '{"Key Mappings":{"0xf728-0x0":{"Action":11,"Text":"0x4"},"0xf702-0x280000":{"Action":10,"Text":"b"},"0xf702-0x300000":{"Action":11,"Text":"0x1"},"0xf703-0x280000":{"Action":10,"Text":"f"},"0xf728-0x80000":{"Action":10,"Text":"d"},"0x7f-0x100000":{"Action":11,"Text":"0x15"},"0xf703-0x300000":{"Action":11,"Text":"0x5"},"0x7f-0x80000":{"Action":11,"Text":"\"0x1b 0x7f\""}},"Touch Bar Items":[]}' > iterm2.itermkeymap
   - Profiles > Open Profiles > Edit Profiles... > Keys > Key Mappings > + > load `iterm2.itermkeymap`
 
 ### [FireFox](https://www.mozilla.org/en-US/firefox/new/)
@@ -203,3 +201,23 @@
 
 - double-click `spotify.zip` to extract
 - double-click `Install Spotify.app` to install
+
+### [Docker](https://docs.docker.com)
+
+- download `.dmg` (for [arm64](https://docs.docker.com/desktop/setup/install/mac-install/))
+
+    ```bash
+    curl -L 'https://desktop.docker.com/mac/main/arm64/Docker.dmg' --output docker.dmg
+    ```
+
+- double-click `docker.dmg` to install
+
+### [FZF](https://github.com/junegunn/fzf)
+
+- install fzf:
+
+    ```bash
+    brew install fzf
+    ```
+
+
