@@ -1,0 +1,32 @@
+# disable automatic virtual env prompt on ps1
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# \D{%Y-%m-%d} - iso date
+# \t - iso time
+__PS1_datetime="\D{%Y-%m-%d} \t "
+if [ ! -z "${VIRTUAL_ENV_PROMPT-}" ]; then
+    __PS1_venv="($VIRTUAL_ENV_PROMPT) "
+else
+    __PS1_venv=""
+fi
+# \e[92;1m - bold green formatting
+# \h - 1st part of hostname
+# \u - username
+# \e[0m - clean formatting
+__PS1_user="\e[92;1m\h@\u\e[0m"
+# \w - current working directory
+__PS1_cwd=":\w"
+__PS1_input="\n$ "
+
+# custom ps1
+export PS1="${__PS1_datetime}${__PS1_venv}${__PS1_user}${__PS1_cwd}${__PS1_input}"
+
+set-window-title() {
+    echo -en "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
+}
+
+if [[ "$PROMPT_COMMAND" ]]; then
+    export PROMPT_COMMAND="$PROMPT_COMMAND;set-window-title"
+else
+    export PROMPT_COMMAND=set-window-title
+fi

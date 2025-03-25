@@ -12,8 +12,9 @@ mkdir -p ~/bin
 # installed tools bin
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 
+[ -r ~/.bash_terminal_cfg ] && source ~/.bash_terminal_cfg
+
 [ -r ~/.profile ] && source ~/.profile
 [ -r ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 [ -r ~/.bash_completion ] && source ~/.bash_completion
-
