@@ -20,6 +20,7 @@
     - [Python](#python)
       - [pip](#pip)
       - [pyenv](#pyenv)
+    - [NVM](#nvm)
 
 ## Install
 
@@ -31,11 +32,11 @@
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
-- add brew initializer
+- setup
 
     ```bash
-    echo >> /Users/$(whoami)/.zprofile
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+    echo >> ~/.bash_profile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
     eval "$(/opt/homebrew/bin/brew shellenv)"
     ```
 
@@ -85,7 +86,8 @@
 - add the app to the $PATH to be able to launch it with `code` from the terminal:
 
     ```bash
-    echo 'export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"' >> ~/.bashrc
+    echo '# Add VSCode to path' >> ~/.profile
+    echo 'export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"' >> ~/.profile
     ```
 
 ### VPN
@@ -105,7 +107,7 @@
 - add bash [autocomplete](https://github.com/gopasspw/gopass/blob/master/docs/setup.md#enable-bash-auto-completion)
 
     ```bash
-    echo 'source /dev/stdin <<<"$(gopass completion bash)"' >> ~/.bashrc
+    echo 'source /dev/stdin <<<"$(gopass completion bash)"' >> ~/.bash_completion
     ```
 
 - create new gpg key
@@ -272,7 +274,26 @@
 - setup
 
     ```bash
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
+    echo '# Pyenv - python versions manager' >> ~/.profile
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+    echo 'eval "$(pyenv init - bash)"' >> ~/.profile
+    ```
+
+### [NVM](https://github.com/nvm-sh/nvm)
+
+- install
+
+    ```bash
+    brew install nvm
+    ```
+
+- setup
+
+  ```bash
+    echo '# NVM - node versions manager' >> ~/.profile
+    echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.profile
+    echo '__NVM_BREW_PREFIX=$(brew --prefix nvm)' >> ~/.profile
+    echo '[ -s "${__NVM_BREW_PREFIX}/nvm.sh" ] && \. "${__NVM_BREW_PREFIX}/nvm.sh"' >> ~/.profile
+    echo '[ -s "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm" ] && \. "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm"' >> ~/.profile
     ```
