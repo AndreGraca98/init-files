@@ -1,7 +1,14 @@
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+# custom tools bin
 mkdir -p ~/bin
 [ -d ~/bin ] && export PATH=$PATH:$HOME/bin
+# installed tools bin
+[ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 
 [ -r ~/.profile ] && source ~/.profile
 [ -r ~/.bashrc ] && source ~/.bashrc
