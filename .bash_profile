@@ -1,3 +1,5 @@
+# silence "The default interactive shell is now zsh." warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
