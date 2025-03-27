@@ -1,6 +1,8 @@
 # silence "The default interactive shell is now zsh." warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# don't auto update unrelated pckgs when installing new pckgs
+export HOMEBREW_NO_AUTO_UPDATE=1
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set up fzf key bindings and fuzzy completion
