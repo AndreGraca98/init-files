@@ -13,6 +13,8 @@ alias ....='cd ../../..'
     cd -
 }
 
+alias ip='ipconfig getifaddr en0'
+
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
