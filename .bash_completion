@@ -1,4 +1,10 @@
 
+# add git completion
+cli_tools='/Library/Developer/CommandLineTools'
+git_core="$cli_tools/usr/share/git-core"
+git_completion="$git_core/git-completion.bash"
+[ -x "$(which git)" ] && [ -f "$git_completion" ] && source "$git_completion"
+
 [ -r ~/.local/share/gopass ] && source /dev/stdin <<<"$(gopass completion bash)"
 
 # START: Bash auto completion for make
