@@ -1,3 +1,5 @@
+# turn off tab complete for hidden files
+bind 'set match-hidden-files off'
 
 # add git completion
 cli_tools='/Library/Developer/CommandLineTools'
