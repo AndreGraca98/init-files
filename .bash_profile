@@ -14,8 +14,10 @@ mkdir -p ~/bin
 # installed tools bin
 [ -d ~/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 
+# terminal cfg
 [ -r ~/.bash_terminal_cfg ] && source ~/.bash_terminal_cfg
 
+# other
 [ -r ~/.profile ] && source ~/.profile
 [ -r ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases

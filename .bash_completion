@@ -1,3 +1,8 @@
+# add bash completion
+if [[ -s $HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh ]]; then
+    source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
+fi
+
 # turn off tab complete for hidden files
 bind 'set match-hidden-files off'
 
@@ -7,9 +12,10 @@ git_core="$cli_tools/usr/share/git-core"
 git_completion="$git_core/git-completion.bash"
 [ -x "$(which git)" ] && [ -f "$git_completion" ] && source "$git_completion"
 
+# add gopass completion
 [ -r ~/.local/share/gopass ] && source /dev/stdin <<<"$(gopass completion bash)"
 
-# START: Bash auto completion for make
+# add make completion
 _make_fzf_completion() {
     local cur prev start_word
     start_word=${COMP_WORDS[0]}
@@ -32,5 +38,3 @@ _make_fzf_completion() {
     COMPREPLY=$(echo "$selected_target" | tail -n 1 | awk '{print $1}')
 }
 complete -F _make_fzf_completion make
-# END: Bash auto completion for make
-
