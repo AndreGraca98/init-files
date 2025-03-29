@@ -1,4 +1,4 @@
-# add bash completion
+# add bash completion : brew install bash-completion
 if [[ -s $HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh ]]; then
     source "$HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh"
 fi
