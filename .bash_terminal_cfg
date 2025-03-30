@@ -13,13 +13,20 @@ fi
 # \h - 1st part of hostname
 # \u - username
 # \e[0m - clean formatting
-__PS1_user="\e[92;1m\h@\u\e[0m"
+__PS1_user="\e[92;1m\u@\h\e[0m"
+# \e[94;1m - bold blue formatting
+__PS1_user_remote="[ssh \e[94;1m\u@\h\e[0m]"
 # \w - current working directory
 __PS1_cwd=":\w"
-__PS1_input="\n$ "
+__PS1_input="$ "
 
 # custom ps1
-export PS1="${__PS1_datetime}${__PS1_venv}${__PS1_user}${__PS1_cwd}${__PS1_input}"
+export PS1="${__PS1_datetime}${__PS1_venv}${__PS1_user}${__PS1_cwd}\n${__PS1_input}"
+export PSSSH="${__PS1_user_remote}${__PS1_cwd}\n${__PS1_input}"
+
+if [ ! -z "$(who am i | grep -E 'pts/[0-9]+')" ]; then
+    export PS1=$PSSSH
+fi
 
 set-window-title() {
     echo -en "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
