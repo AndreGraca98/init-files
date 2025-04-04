@@ -24,9 +24,7 @@ __PS1_input="$ "
 export PS1="${__PS1_datetime}${__PS1_venv}${__PS1_user}${__PS1_cwd}\n${__PS1_input}"
 export PSSSH="${__PS1_user_remote}${__PS1_cwd}\n${__PS1_input}"
 
-if [ ! -z "$(who am i | grep -E 'pts/[0-9]+')" ]; then
-    export PS1=$PSSSH
-fi
+[[ $(who am i | grep -E 'pts/[0-9]+') && -n "$PSSSH" ]] && export PS1="$PSSSH"
 
 set-window-title() {
     echo -en "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
