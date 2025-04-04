@@ -14,6 +14,7 @@ git_completion="$git_core/git-completion.bash"
 
 # add gopass completion
 [ -r ~/.local/share/gopass ] && source /dev/stdin <<<"$(gopass completion bash)"
+[ -r ~/.pyenv/shims/pdm ] && source /dev/stdin <<<"$(pdm completion bash)"
 
 # add make completion
 _make_fzf_completion() {
