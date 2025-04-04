@@ -1,5 +1,3 @@
-
-
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Pyenv - python versions manager
@@ -12,3 +10,5 @@ export NVM_DIR="$HOME/.nvm"
 __NVM_BREW_PREFIX=$(brew --prefix nvm)
 [ -s "${__NVM_BREW_PREFIX}/nvm.sh" ] && \. "${__NVM_BREW_PREFIX}/nvm.sh"
 [ -s "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm" ] && \. "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm"
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
