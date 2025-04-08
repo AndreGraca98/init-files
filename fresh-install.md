@@ -21,6 +21,7 @@
       - [pip](#pip)
       - [pyenv](#pyenv)
     - [NVM](#nvm)
+    - [yarn](#yarn)
 
 ## Install
 
@@ -296,4 +297,12 @@
     echo '__NVM_BREW_PREFIX=$(brew --prefix nvm)' >> ~/.profile
     echo '[ -s "${__NVM_BREW_PREFIX}/nvm.sh" ] && \. "${__NVM_BREW_PREFIX}/nvm.sh"' >> ~/.profile
     echo '[ -s "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm" ] && \. "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm"' >> ~/.profile
+    ```
+
+### [yarn](https://classic.yarnpkg.com/lang/en/docs/install)
+
+- install
+
+    ```bash
+    npm install --global yarn
     ```
