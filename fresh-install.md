@@ -299,6 +299,14 @@
     echo '[ -s "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm" ] && \. "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm"' >> ~/.profile
     ```
 
+### [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+- install
+
+    ```bash
+    nvm install node 
+    ```
+
 ### [yarn](https://classic.yarnpkg.com/lang/en/docs/install)
 
 - install
