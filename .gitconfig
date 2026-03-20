@@ -1,6 +1,9 @@
 [user]
-	name = André Graça
+	name = André Graça
 	email = andrepgraca@gmail.com
+
+[github]
+	user = AndreGraca98
     
 [includeIf "gitdir:~/projects/claranet/"]
     path = .gitconfig.claranet
