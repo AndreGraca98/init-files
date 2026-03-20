@@ -22,3 +22,14 @@ mkdir -p ~/bin
 [ -r ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 [ -r ~/.bash_completion ] && source ~/.bash_completion
+
+# if cd to directory where nvmrc is present load the node version
+load_nvmrc() {
+    local nvmrc_path
+    nvmrc_path=$(direnv_find_up ".nvmrc")
+    if [ -n "$nvmrc_path" ]; then
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "NVM_DIR/nvm.sh" ] && \. "NVM_DIR/nvm.sh"
+        nvm use
+    fi
+}
