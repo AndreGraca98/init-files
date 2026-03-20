@@ -5,10 +5,14 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 
+# direnv
+eval "$(direnv hook bash)"
+
 # NVM - node versions manager
 export NVM_DIR="$HOME/.nvm"
 __NVM_BREW_PREFIX=$(brew --prefix nvm)
 [ -s "${__NVM_BREW_PREFIX}/nvm.sh" ] && \. "${__NVM_BREW_PREFIX}/nvm.sh"
 [ -s "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm" ] && \. "${__NVM_BREW_PREFIX}/etc/bash_completion.d/nvm"
 
+# mysql-client
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
